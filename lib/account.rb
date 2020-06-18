@@ -6,6 +6,6 @@ class Account
   end
 
   def add(transaction)
-    @balance = 1000 * 100
+    @balance += transaction.amount
   end
 end
