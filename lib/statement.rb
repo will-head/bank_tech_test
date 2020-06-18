@@ -31,7 +31,8 @@ class Statement
     return " " if amount.nil?
     
     Money.locale_backend = nil
-    " #{Money.new(amount).format(symbol: false, thousands_separator: '')} "
+    Money.rounding_mode = BigDecimal::ROUND_HALF_EVEN
+    " #{Money.new(amount, 'GBP').format(symbol: false, thousands_separator: '')} "
   end
 
   def self.format_date(date)
