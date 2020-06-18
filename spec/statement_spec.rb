@@ -2,10 +2,18 @@ require 'i18n'
 require 'money'
 require 'statement'
 
+EXAMPLE_STATEMENT = 
+"date || credit || debit || balance
+14/01/2012 || || 500.00 || 2500.00
+13/01/2012 || 2000.00 || || 3000.00
+10/01/2012 || 1000.00 || || 1000.00
+"
+
 I18n.enforce_available_locales = false
 I18n.default_locale = :en
 
 describe 'statement' do
+  let(:account) { Account.new }
 
   let(:transaction_1) { Transaction.new(Date.new(2012, 1, 10), 1000 * 100) }
   let(:transaction_2) { Transaction.new(Date.new(2012, 1, 13), 2000 * 100) }
@@ -23,6 +31,14 @@ describe 'statement' do
   it 'returns line for debit' do
     transaction_3.balance = 2500 * 100
     expect(Statement.line(transaction_3)).to eq "14/01/2012 || || 500.00 || 2500.00\n" 
+  end
+
+  it 'returns a statement for an account' do
+    account.add(transaction_1)
+    account.add(transaction_2)
+    account.add(transaction_3)
+
+    expect(Statement.show(account)).to eq EXAMPLE_STATEMENT
   end
 
 end
