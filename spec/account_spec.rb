@@ -9,7 +9,7 @@ describe 'account' do
     expect(account.balance).to eq 0
   end
 
-  it 'Adding a transaction increases the balance by the same amount' do
+  it 'Adding a transaction changes the balance by the same amount' do
     account = Account.new
     amount = 1000 * 100
     transaction = Transaction.new(date, amount)
