@@ -5,7 +5,7 @@ class Statement
     HEADER
   end
 
-  def self.line(transaction, balance)
+  def self.line(transaction)
     if transaction.amount >= 0
       credit = transaction.amount
     else
@@ -15,7 +15,7 @@ class Statement
     date_string = format_date(transaction.date)
     credit_string = format_money(credit)
     debit_string = format_money(debit)
-    balance_string = format_money(balance).delete_suffix(' ')
+    balance_string = format_money(transaction.balance).delete_suffix(' ')
 
     "#{date_string}||#{credit_string}||#{debit_string}||#{balance_string}"
   end

@@ -16,11 +16,13 @@ describe 'statement' do
   end
 
   it 'returns line for credit' do
-    expect(Statement.line(transaction_1, 1000 * 100)).to eq "10/01/2012 || 1000.00 || || 1000.00" 
+    transaction_1.balance = 1000 * 100
+    expect(Statement.line(transaction_1)).to eq "10/01/2012 || 1000.00 || || 1000.00" 
   end
 
   it 'returns line for debit' do
-    expect(Statement.line(transaction_3, 2500 * 100)).to eq "14/01/2012 || || 500.00 || 2500.00" 
+    transaction_3.balance = 2500 * 100
+    expect(Statement.line(transaction_3)).to eq "14/01/2012 || || 500.00 || 2500.00" 
   end
 
 end
