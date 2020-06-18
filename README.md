@@ -23,10 +23,10 @@ To test an individual item run:
 $ ./test/tdd.test [item_name]
 ```
 
-To run the feature test, run the following:
+To run the feature test, run script:
 
 ```bash
-irb < ./feature_test.irb
+./test/feature.test
 ```
 
 ## Specification
