@@ -1,16 +1,15 @@
 require 'date'
-require 'i18n'
 require 'money'
 require_relative 'lib/transaction'
 require_relative 'lib/account'
 require_relative 'lib/statement'
 
-I18n.enforce_available_locales = false
-I18n.default_locale = :en
-
 account = Account.new
+
 account.add (Transaction.new(Date.new(2012, 1, 10), 1000 * 100))
+
 account.add (Transaction.new(Date.new(2012, 1, 13), 2000 * 100))
+
 account.add (Transaction.new(Date.new(2012, 1, 14), -500 * 100))
 
-puts Statement.show(account)
+puts "\n\n" + Statement.show(account) + "\n"
