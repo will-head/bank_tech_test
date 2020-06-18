@@ -1,4 +1,6 @@
 require 'money'
+require 'transaction'
+require 'account'
 require 'statement'
 
 EXAMPLE_STATEMENT = 
@@ -7,9 +9,6 @@ EXAMPLE_STATEMENT =
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
 "
-
-# I18n.enforce_available_locales = false
-# I18n.default_locale = :en
 
 describe 'statement' do
   let(:account) { Account.new }

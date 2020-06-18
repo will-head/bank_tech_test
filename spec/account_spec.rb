@@ -1,3 +1,4 @@
+require 'transaction'
 require 'account'
 
 describe 'account' do
