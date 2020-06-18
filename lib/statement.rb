@@ -30,6 +30,7 @@ class Statement
   def self.format_money(amount)
     return " " if amount.nil?
     
+    Money.locale_backend = nil
     " #{Money.new(amount).format(symbol: false, thousands_separator: '')} "
   end
 

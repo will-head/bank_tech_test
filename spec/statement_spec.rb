@@ -1,4 +1,3 @@
-require 'i18n'
 require 'money'
 require 'statement'
 
@@ -9,8 +8,8 @@ EXAMPLE_STATEMENT =
 10/01/2012 || 1000.00 || || 1000.00
 "
 
-I18n.enforce_available_locales = false
-I18n.default_locale = :en
+# I18n.enforce_available_locales = false
+# I18n.default_locale = :en
 
 describe 'statement' do
   let(:account) { Account.new }
