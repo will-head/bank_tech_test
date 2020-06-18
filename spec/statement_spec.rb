@@ -9,7 +9,7 @@ describe 'statement' do
   end
 
   it 'returns line for credit' do
-    expect(Statement.line(transaction_1)).to eq "10/01/2012 || 1000.00 || || 1000.00" 
+    expect(Statement.line(transaction_1, 1000 * 100)).to eq "10/01/2012 || 1000.00 || || 1000.00" 
   end
 
 end
