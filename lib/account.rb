@@ -1,5 +1,5 @@
 class Account
-  attr_reader :balance
+  attr_reader :balance, :transactions
 
   def initialize
     @balance = 0
@@ -9,10 +9,6 @@ class Account
   def add(transaction)
     @balance += transaction.amount
     @transactions.push(transaction)
-  end
-
-  def transactions
-    @transactions
   end
 
 end
