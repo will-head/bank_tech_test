@@ -1,7 +1,8 @@
 class Statement
+  HEADER = "date || credit || debit || balance"
 
   def self.header
-    "date || credit || debit || balance"
+    HEADER
   end
 
 end
