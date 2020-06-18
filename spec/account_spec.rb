@@ -15,6 +15,11 @@ describe 'account' do
     expect { account.add(transaction) }.to change { account.balance }.by(amount)
   end
 
+  it 'Adding a transaction updates the balance of the transaction' do
+    result = account.add(transaction)
+    expect(result.balance).to eq account.balance
+  end
+
   it '#transactions returns an array of transactions' do
     date_1 = Date.new(2012, 1, 13)
     amount_1 = 2000 * 100

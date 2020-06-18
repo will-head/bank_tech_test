@@ -8,7 +8,9 @@ class Account
 
   def add(transaction)
     @balance += transaction.amount
+    transaction.balance = @balance
     @transactions.push(transaction)
+    @transactions.last
   end
 
 end
