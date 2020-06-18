@@ -14,4 +14,9 @@ describe 'transaction' do
     expect(transaction.amount).to eq amount
   end
 
+  it '#balance returns nil' do
+    transaction = Transaction.new(date, amount)
+    expect(transaction.balance).to eq nil
+  end
+
 end
