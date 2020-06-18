@@ -1,5 +1,5 @@
 class Statement
-  HEADER = "date || credit || debit || balance"
+  HEADER = "date || credit || debit || balance\n"
 
   def self.header
     HEADER
@@ -17,7 +17,7 @@ class Statement
     debit_string = format_money(debit)
     balance_string = format_money(transaction.balance).delete_suffix(' ')
 
-    "#{date_string}||#{credit_string}||#{debit_string}||#{balance_string}"
+    "#{date_string}||#{credit_string}||#{debit_string}||#{balance_string}\n"
   end
 
   def self.format_money(amount)
