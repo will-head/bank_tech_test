@@ -1,4 +1,9 @@
+require 'i18n'
+require 'money'
 require 'statement'
+
+I18n.enforce_available_locales = false
+I18n.default_locale = :en
 
 describe 'statement' do
 

@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 group :development, :test do
+  gem 'money'
   gem 'rspec'
   gem 'rubocop', '0.79.0'
   gem 'simplecov', require: false

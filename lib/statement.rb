@@ -6,7 +6,10 @@ class Statement
   end
 
   def self.line(transaction, balance)
-    "10/01/2012 || 1000.00 || || 1000.00"
+    balance_string = Money.new(balance).format(symbol: false, thousands_separator: '')
+    credit_string = Money.new(transaction.amount).format(symbol: false, thousands_separator: '')
+    date_string = transaction.date.strftime("%d/%m/%Y")
+    "#{date_string} || #{credit_string} || || #{balance_string}"
   end
 
 end
