@@ -29,6 +29,17 @@ To run the feature test, run script:
 ./test/feature.test
 ```
 
+## Approach
+
+## Code Structure
+
+## Improvements
+
+* Add Approach section
+* Add Code Structure section  
+* Add Screenshot of code running  
+* Add deposit and withdraw methods to Account  
+
 ## Specification
 
 ### Requirements
