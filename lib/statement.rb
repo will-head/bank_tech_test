@@ -1,6 +1,13 @@
 class Statement
   HEADER = "date || credit || debit || balance\n"
 
+  def self.show(account)
+    statement = header
+    account.transactions.reverse.each { |transaction| statement += line(transaction) }
+
+    statement
+  end
+
   def self.header
     HEADER
   end
@@ -20,13 +27,6 @@ class Statement
     "#{date_string}||#{credit_string}||#{debit_string}||#{balance_string}\n"
   end
 
-  def self.show(account)
-    statement = header
-    account.transactions.reverse.each { |transaction| statement += line(transaction) }
-
-    statement
-  end
-
   def self.format_money(amount)
     return " " if amount.nil?
     
@@ -39,5 +39,5 @@ class Statement
     date.strftime("%d/%m/%Y ")
   end
 
-  private_class_method :format_money, :format_date
+  private_class_method :header, :line, :format_money, :format_date
 end
