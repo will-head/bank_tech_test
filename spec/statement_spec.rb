@@ -16,9 +16,9 @@ EXAMPLE_STATEMENT_TRANSACTION_1
 describe 'statement' do
   let(:account) { Account.new }
 
-  let(:transaction_1) { Transaction.new(Date.new(2012, 1, 10), 1000 * 100) }
-  let(:transaction_2) { Transaction.new(Date.new(2012, 1, 13), 2000 * 100) }
-  let(:transaction_3) { Transaction.new(Date.new(2012, 1, 14), -500 * 100) }
+  let(:transaction_1) { Transaction.new(1000 * 100, Date.new(2012, 1, 10)) }
+  let(:transaction_2) { Transaction.new(2000 * 100, Date.new(2012, 1, 13)) }
+  let(:transaction_3) { Transaction.new(-500 * 100, Date.new(2012, 1, 14)) }
 
   it 'returns header line if no transactions' do
     expect(Statement.show(account)).to eq EXAMPLE_STATEMENT_HEADER

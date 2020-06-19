@@ -6,7 +6,7 @@ describe 'account' do
 
   let(:date) { Date.new(2012, 1, 10) }
   let(:amount) { 1000 * 100 }
-  let(:transaction) { Transaction.new(date, amount) }
+  let(:transaction) { Transaction.new(amount, date) }
 
   it '#balance returns zero on creation' do
     expect(account.balance).to eq 0
@@ -24,7 +24,7 @@ describe 'account' do
   it '#transactions returns an array of transactions' do
     date_1 = Date.new(2012, 1, 13)
     amount_1 = 2000 * 100
-    transaction_1 = Transaction.new(date_1, amount_1)
+    transaction_1 = Transaction.new(amount_1, date_1)
 
     account.add(transaction)
     account.add(transaction_1)

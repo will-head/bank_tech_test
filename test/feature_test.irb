@@ -6,10 +6,10 @@ require_relative 'lib/statement'
 
 account = Account.new
 
-account.add (Transaction.new(Date.new(2012, 1, 10), 1000 * 100))
+account.add (Transaction.new(1000 * 100, Date.new(2012, 1, 10)))
 
-account.add (Transaction.new(Date.new(2012, 1, 13), 2000 * 100))
+account.add (Transaction.new(2000 * 100, Date.new(2012, 1, 13)))
 
-account.add (Transaction.new(Date.new(2012, 1, 14), -500 * 100))
+account.add (Transaction.new(-500 * 100, Date.new(2012, 1, 14)))
 
 puts "\n\n" + Statement.show(account) + "\n"
