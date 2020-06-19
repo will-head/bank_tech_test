@@ -1,3 +1,4 @@
+require 'timecop'
 require 'transaction'
 
 describe 'transaction' do
@@ -10,9 +11,11 @@ describe 'transaction' do
   end
 
   it '#date returns when transcation created, if no date supplied' do
-    now = Date.new
+    Timecop.freeze
+    now = Date.today
     transaction = Transaction.new(amount)
     expect(transaction.date).to eq now
+    Timecop.return
   end
 
   it '#amount returns transaction amount' do
