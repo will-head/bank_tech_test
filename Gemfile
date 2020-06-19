@@ -5,8 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'money'
+
 group :development, :test do
-  gem 'money'
   gem 'rspec'
   gem 'rubocop', '0.79.0'
   gem 'simplecov', require: false
