@@ -14,17 +14,17 @@ class Statement
 
   def self.line(transaction)
     if transaction.amount >= 0
-      credit = transaction.amount
+      credit_amount = transaction.amount
     else
-      debit = transaction.amount.abs
+      debit_amount = transaction.amount.abs
     end
 
-    date_string = format_date(transaction.date)
-    credit_string = format_money(credit)
-    debit_string = format_money(debit)
-    balance_string = format_money(transaction.balance).delete_suffix(' ')
+    date = format_date(transaction.date)
+    credit = format_money(credit_amount)
+    debit = format_money(debit_amount)
+    balance = format_money(transaction.balance).delete_suffix(' ')
 
-    "#{date_string}||#{credit_string}||#{debit_string}||#{balance_string}\n"
+    "#{date}||#{credit}||#{debit}||#{balance}\n"
   end
 
   def self.format_money(amount)
